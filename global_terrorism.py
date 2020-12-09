@@ -375,7 +375,7 @@ if nag == "Target of terrorist groups":
 
 if nag == "Military Spending vs. Casualties":
     
-    st.markdown('## **5. Military Spending vs. Casualties**')
+    st.markdown('## **6. Military Spending vs. Casualties**')
     # load new data
     warspending = pd.read_csv(r'./Militaryspending.csv',encoding='ISO-8859-1')
 
