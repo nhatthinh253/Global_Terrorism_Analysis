@@ -39,10 +39,6 @@ st.sidebar.info(
         "[LinkedIn](https://linkedin.com/in/nhatthinh253)"
     )
 
-github = '[GitHub](https://github.com/nhatthinh253)'
-linkedin = '[LinkedIn](https://linkedin.com/in/nhatthinh253)'
-st.sidebar.markdown(github, unsafe_allow_html=True)
-st.sidebar.markdown(linkedin, unsafe_allow_html=True)
 # Import data_1
 data1 = load_data('./data1.csv')
 
