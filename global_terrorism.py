@@ -19,7 +19,7 @@ def load_data(path):
 st.markdown(f'<h1 style="text-align: center; color: darkred;">Global Terrorism Analysis</h1>', 
                 unsafe_allow_html=True) 
 
-st.sidebar.header("Global Terrorism Analysis")
+st.sidebar.header("Navigation")
 
 content = [  "Terrorist activities", 
              "Attacks by region",
@@ -29,15 +29,17 @@ content = [  "Terrorist activities",
               ]
 nag = st.sidebar.radio("Go to:",content)
 
-st.sidebar.header("About")
+st.sidebar.header("Contribute")
 st.sidebar.info(
-        "This project is contributed by:\n\n"   
-        "Thinh Cao,  " 
-        "Dom Brett, " 
-        "Phat Nguyen \n\n"
-        "[GitHub](https://github.com/nhatthinh253) | "
-        "[LinkedIn](https://linkedin.com/in/nhatthinh253)"
+        '''This project is contributed by:   
+        **Thinh Cao**: [GitHub](https://github.com/nhatthinh253) | [LinkedIn](https://linkedin.com/in/nhatthinh253)
+        **Dom Brett**,
+        **Phat Nguyen**.
+        The source code can be found in this [Github Repo](https://github.com/nhatthinh253/Global_Terrorism_Analysis).'''
+        
     )
+st.sidebar.header("About")
+st.sidebar.info("This app is maintained by [**Thinh Cao**](https://linkedin.com/in/nhatthinh253). You can reach me at nhatthinh253@gmail.com")
 
 # Import data_1
 data1 = load_data('./data1.csv')
