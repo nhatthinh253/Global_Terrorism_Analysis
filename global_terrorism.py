@@ -19,11 +19,9 @@ def load_data(path):
 st.markdown(f'<h1 style="text-align: center; color: darkred;">Global Terrorism Analysis</h1>', 
                 unsafe_allow_html=True) 
 
-st.sidebar.header("Navigation")
+st.sidebar.header("Global Terrorism Analysis")
 
-content = [ 
-            "Map of terrorist activities",
-             "Terrorist activities", 
+content = [  "Terrorist activities", 
              "Attacks by region",
               "Terrorist groups",
               "Target of terrorist groups",
@@ -31,13 +29,14 @@ content = [
               ]
 nag = st.sidebar.radio("Go to:",content)
 
-st.sidebar.header("About the project:")
+st.sidebar.header("About")
 st.sidebar.info(
-        "Contributors: \n\n"   
-        "1. Thinh Cao \n\n" 
-        "2. Dom Brett \n\n" 
-        "3. Phat Nguyen \n\n"
-        #"Contact: nhatthinh253@gmail.com \n\n"
+        "This project is contributed by:\n\n"   
+        "Thinh Cao,  " 
+        "Dom Brett, " 
+        "Phat Nguyen \n\n"
+        "[GitHub](https://github.com/nhatthinh253) | "
+        "[LinkedIn](https://linkedin.com/in/nhatthinh253)"
     )
 
 github = '[GitHub](https://github.com/nhatthinh253)'
@@ -53,7 +52,7 @@ data2.nkill.fillna(0,inplace = True)
 data2.nwound.fillna(0,inplace = True)
 data2['ncasualty'] = data2.nkill + data2.nwound
 
-if nag == "Map of terrorist activities":
+if nag == "Terrorist activities":
     
     st.markdown('## **1. Terrorist activities from 1970 to 2017**')
 
@@ -102,10 +101,6 @@ if nag == "Map of terrorist activities":
     st.subheader(f'Map of terrorist activities in {year}')
     if st.checkbox('Show sample raw data'):
         st.write(map_data[0:10])
-if nag == "Terrorist activities":
-
-    # Part 2 : Overall trend
-    st.markdown("## " + '**2. Terrorist activities from 1970 to 2017**')
 
     # Key takeaways
     st.markdown('''Up to 2011, the number of attacks never exceeded 5000 per year.
@@ -133,14 +128,14 @@ if nag == "Terrorist activities":
 
 if nag == "Attacks by region":
     
-    st.markdown('## **3. Attacks by region from 1970 to 2017**')
+    st.markdown('## **2. Attacks by region from 1970 to 2017**')
 
     # Create multiple selecter with  st.multiselect 
     st.markdown("#### " +"Which region would you like to see?")
 
     regions = data1.region_txt.unique()
     selected_region = st.multiselect(
-        label="Choose...", options= regions
+        label="Choose a region", options= regions
     )
 
     # prepare data to plot
@@ -174,7 +169,7 @@ if nag == "Attacks by region":
 
 if nag == "Terrorist groups":
     
-    st.markdown('## **4. Notorious Terrorist Groups from 1970 to 2017**')
+    st.markdown('## **3. Notorious Terrorist Groups from 1970 to 2017**')
 
     # Top 10 all-time terrorist groups
     top_10_data = data1['gname'].value_counts()[1:11]
@@ -228,7 +223,7 @@ if nag == "Terrorist groups":
 
     # Middle East & North Africa
 
-    st.markdown('### **4.1 Middle East & North Africa**')
+    st.markdown('### **3.1 Middle East & North Africa**')
 
     # Prepare data
     MENA = data2[(data2.region_txt == 'Middle East & North Africa')]
@@ -277,7 +272,7 @@ if nag == "Terrorist groups":
     Fallujah, Mosul, Tikrit and in the major areas of northern Iraq by the ISIS''')
 
     # South Asia
-    st.markdown('### **4.2 South Asia**')
+    st.markdown('### **3.2 South Asia**')
 
     # prepare data
     South_asia = data2[(data2.region_txt == 'South Asia')]
@@ -325,7 +320,7 @@ if nag == "Terrorist groups":
 
 if nag == "Target of terrorist groups":
     
-    st.markdown('## **5. Target of top 10 nororious terrorist groups**')
+    st.markdown('## **4. Target of top 10 nororious terrorist groups**')
     ReT= {'Government (Diplomatic)':'Government','Government (General)':'Government',
       'Police':'Police & Military',  
       'Military':'Police & Military',
@@ -375,7 +370,7 @@ if nag == "Target of terrorist groups":
 
 if nag == "Military Spending vs. Casualties":
     
-    st.markdown('## **6. Military Spending vs. Casualties**')
+    st.markdown('## **5. Military Spending vs. Casualties**')
     # load new data
     warspending = pd.read_csv(r'./Militaryspending.csv',encoding='ISO-8859-1')
 
