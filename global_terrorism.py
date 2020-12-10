@@ -39,7 +39,7 @@ st.sidebar.info(
         
     )
 st.sidebar.header("About")
-st.sidebar.info("This app is maintained by [**Thinh Cao**](https://linkedin.com/in/nhatthinh253). You can reach me at nhatthinh253@gmail.com")
+st.sidebar.info("This app is maintained by [**Thinh Cao (Jake)**](https://linkedin.com/in/nhatthinh253). You can reach me at nhatthinh253@gmail.com")
 
 # Import data_1
 data1 = load_data('./data1.csv')
